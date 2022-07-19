@@ -1,9 +1,48 @@
-from django.http import HttpResponse
+import re
 from django.shortcuts import render
+from joblib import load
+from nltk.corpus import stopwords
+from nltk.stem.porter import PorterStemmer
+
+from app_nlp_news_classifier.forms import Article
+
+tfidf_vectorizer = load(
+    r"C:\Users\lotar\Desktop\projets\00.django_projects\django_nlp_news_classifier\src\saved_models\tfidf_vectorizer"
+    r".joblib")
+
+multinomial_nb_classifier = load(
+    r"C:\Users\lotar\Desktop\projets\00.django_projects\django_nlp_news_classifier\src\saved_models"
+    r"\multinomial_nb_classifier.joblib")
 
 
 # Create your views here.
 def index(request):
-    return HttpResponse("<h1>index</h1>")
+    article = Article()
+
+    if request.method == "POST":
+        if article.is_valid():
+            article.save()
+
+    return render(request, "index.html", {"form": article})
+
 
 def result(request):
+    article = request.GET.get("article", "")
+    ps = PorterStemmer()
+    new_corpus = []
+    review = re.sub("[^a-zA-Z]", " ", article)
+    review = review.lower()
+    review = review.split()
+    review = [ps.stem(word) for word in review if word not in stopwords.words("english")]
+    review = " ".join(review)
+    new_corpus.append(review)
+    article_vectorized = tfidf_vectorizer.transform(new_corpus)
+    article_pred = multinomial_nb_classifier.predict(article_vectorized)
+
+    if article_pred == [0]:
+        article_pred = "Cette article est une Fake News."
+    else:
+        article_pred = "C'est article est authentifié."
+
+    return render(request, "result.html", {'article_analyzed': article_pred})
+

@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lato&display=swap');
+
+html, body {
+    background-color: #1DA1F2;
+    font-family: 'Lato', sans-serif;
+    height: 100%;
+    width: 100%;
+    color: #F5F8FA;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+   align-items: center;
+   justify-content: center;
+}
