@@ -1,17 +1,10 @@
 {% load static %}
+{% extends 'base.html' %}
+{% block title %}
+    <title>Home Page - Fake News / True News Classifier</title>
+{% endblock %}
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="author" content="Loic Tardy">
-    <meta name="description" content="News NLP Classifier">
-    <link rel="icon" href="favicon.ico" type="">
-    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <title>Article NLP Analyzer</title>
-</head>
-<body>
+{% block content %}
     <div class="container">
         <h1>Analyser l'article:</h1>
         <form action="result">
@@ -20,5 +13,4 @@
             <input type="submit" value="Analyser">
         </form>
     </div>
-</body>
-</html>
+{% endblock %}

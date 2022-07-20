@@ -1,10 +1,9 @@
 import re
+from app_nlp_news_classifier.forms import Article
 from django.shortcuts import render
 from joblib import load
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
-
-from app_nlp_news_classifier.forms import Article
 
 tfidf_vectorizer = load(
     r"C:\Users\lotar\Desktop\projets\00.django_projects\django_nlp_news_classifier\src\saved_models\tfidf_vectorizer"
@@ -45,4 +44,3 @@ def result(request):
         article_pred = "C'est article est authentifié."
 
     return render(request, "result.html", {'article_analyzed': article_pred})
-

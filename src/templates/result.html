@@ -1,22 +1,10 @@
 {% load static %}
+{% extends 'base.html' %}
+{% block title %}
+    <title>Result Page - Fake News / True News Classifier</title>
+{% endblock %}
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="author" content="Loic Tardy">
-    <meta name="description" content="Tweet NLP analyzer">
-    <link rel="icon" href="favicon.ico" type="">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
-    {% block title %}
-    <title>Article NLP Analyzer</title>
-    {% endblock %}
-</head>
-<body>
-    {% block content %}
-        <h1>Result Page</h1>
-        {{ article_analyzed }}
-    {% endblock %}
-</body>
-</html>
+{% block content %}
+    <h1>Result Page</h1>
+    {{ article_analyzed }}
+{% endblock %}
