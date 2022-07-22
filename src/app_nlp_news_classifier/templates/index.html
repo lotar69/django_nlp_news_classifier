@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    <title>Home Page - Fake News / True News Classifier</title>
+{% endblock %}
+
+{% block content %}
+    <section>
+        <p>Ce classificateur de News est basé sur un model "Multinomial Naive Bayes".</p>
+        <p>Le texte est vectorisé avec TF-IDF.</p>
+        <div class="formulaire">
+            <form action="result">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Analyser">
+            </form>
+        </div>
+    </section>
+{% endblock %}

@@ -1,5 +1,5 @@
 import re
-from app_nlp_news_classifier.forms import Article
+from app_nlp_news_classifier.forms import ArticleForm
 from django.shortcuts import render
 from joblib import load
 from nltk.corpus import stopwords
@@ -16,7 +16,7 @@ multinomial_nb_classifier = load(
 
 # Create your views here.
 def index(request):
-    article = Article()
+    article = ArticleForm()
 
     if request.method == "POST":
         if article.is_valid():
@@ -39,8 +39,8 @@ def result(request):
     article_pred = multinomial_nb_classifier.predict(article_vectorized)
 
     if article_pred == [0]:
-        article_pred = "Cette article est une Fake News."
+        article_pred = "Cet article est une Fake News."
     else:
-        article_pred = "C'est article est authentifié."
+        article_pred = "Cet article est authentifié."
 
     return render(request, "result.html", {'article_analyzed': article_pred})

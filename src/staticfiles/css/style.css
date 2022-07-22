@@ -1,16 +1,79 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC&display=swap');
 
 html, body {
-    background-color: #1C1C1C;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Cormorant SC', serif;
     height: 100%;
-    width: 100%;
-    color: #F5F8FA;
+    background-color: mintcream;
 }
 
-.container {
-    height: 100%;
+header, footer {
+    height: 10%;
+    color: black;
     display: flex;
-   align-items: center;
-   justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px;
+}
+
+header h1 {
+    letter-spacing: 4px;
+}
+
+header, footer > p, a {
+    font-size: 1.4rem;
+}
+
+section {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-image: url("images/paper.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+section p {
+    font-size: 1.4rem;
+}
+
+.formulaire {
+    text-align: center;
+    width: 40%;
+}
+
+.formulaire textarea {
+    border: 2px solid black;
+    text-decoration: none;
+    border-radius: .25rem;
+    width: 100%;
+    padding: 8px 16px;
+
+}
+
+input {
+    width: 100%;
+    border: 2px solid black;
+    font-size: 1.4rem;
+    border-radius: .25rem;
+}
+
+
+a:visited {
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.result {
+    font-size: 6rem;
+}
+
+i {
+    font-size: 4rem;
 }

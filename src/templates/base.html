@@ -8,9 +8,22 @@
     <link rel="icon" href="favicon.ico" type="">
     <link rel="stylesheet" href="{% static 'css/reset.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://kit.fontawesome.com/527dde8223.js" crossorigin="anonymous"></script>
     {% block title %}{% endblock %}
 </head>
+
 <body>
-{% block content %}{% endblock %}
+    <header>
+        <a href="{% url 'app_nlp_news_classifier:index' %}">Home</a>
+        <h1>Fake News / True News Classifier</h1>
+        <a href="">Admin</a>
+    </header>
+    {% block content %}{% endblock %}
+    <footer>
+        <a href="https://www.linkedin.com/in/loic-tardy/"><i class="fa-brands fa-linkedin fa-2xl" ></i></a>
+        <a href="https://www.github.com/lotar69"><i class="fa-brands fa-github fa-2xl"></i></a>
+        <a href="https://www.loic-tardy.com/"><i class="fa-solid fa-copyright fa-2xl"></i></a>
+    </footer>
 </body>
+
 </html>
