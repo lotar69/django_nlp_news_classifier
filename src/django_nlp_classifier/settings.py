@@ -23,13 +23,12 @@ environ.Env.read_env(env_file=str(BASE_DIR / "django_nlp_classifier" / ".env"))
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-hd99m35*ak6!qi$nr^)#-ztk9)a#1rm%t(^)mt^gl$epwxez7s'
+SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env.bool("DEBUG", False)
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = env.list("ALLOWED_HOSTS")
 
 # Application definition
 
