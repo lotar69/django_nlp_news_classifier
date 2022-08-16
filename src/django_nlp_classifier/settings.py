@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-hd99m35*ak6!qi$nr^)#-ztk9)a#1rm%t(^)mt^gl$epwxez7s
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['django-nlp-news-classifier.herokuapp.com/', '127.0.0.1']
+ALLOWED_HOSTS = ['django-nlp-news-classifier.herokuapp.com', '127.0.0.1']
 
 # Application definition
 
