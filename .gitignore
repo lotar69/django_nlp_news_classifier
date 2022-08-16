@@ -1,5 +1,6 @@
-src/django_nlp_classifier/settings.py
+.idea/
+db.sqlite3
+__pycache__/
+.env/
 .env
-.idea
-articles
-src/db.sqlite3
+
