@@ -26,6 +26,7 @@ def result(request):
     ps = PorterStemmer()
     new_corpus = []
     review = re.sub("[^a-zA-Z]", " ", article)
+    print(review)
     review = review.lower()
     review = review.split()
     review = [ps.stem(word) for word in review if word not in stopwords.words("english")]
