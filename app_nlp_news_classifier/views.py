@@ -29,7 +29,7 @@ def result(request):
     print("*" * 40, review, "*" * 40)
     review = review.lower()
     review = review.split()
-    review = [ps.stem(word) for word in review if word not in stopwords.words("english")]
+    #review = [ps.stem(word) for word in review if word not in stopwords.words("english")]
     print("*" * 40, review, "*" * 40)
     review = " ".join(review)
     new_corpus.append(review)
