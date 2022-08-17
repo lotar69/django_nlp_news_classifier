@@ -6,11 +6,11 @@ from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 
 tfidf_vectorizer = load(
-    r"C:\Users\lotar\Desktop\projets\00.django_projects\django_nlp_news_classifier\src\saved_models\tfidf_vectorizer"
+    r"C:\Users\lotar\Desktop\projets\00.django_projects\django_nlp_news_classifier\saved_models\tfidf_vectorizer"
     r".joblib")
 
 multinomial_nb_classifier = load(
-    r"C:\Users\lotar\Desktop\projets\00.django_projects\django_nlp_news_classifier\src\saved_models"
+    r"C:\Users\lotar\Desktop\projets\00.django_projects\django_nlp_news_classifier\saved_models"
     r"\multinomial_nb_classifier.joblib")
 
 
