@@ -5,9 +5,9 @@ from joblib import load
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 
-tfidf_vectorizer = load(r"app_nlp_news_classifier/tfidf_vectorizer.joblib")
+tfidf_vectorizer = load("app_nlp_news_classifier/tfidf_vectorizer.joblib")
 
-multinomial_nb_classifier = load(r"app_nlp_news_classifier/multinomial_nb_classifier.joblib")
+multinomial_nb_classifier = load("app_nlp_news_classifier/multinomial_nb_classifier.joblib")
 
 
 # Create your views here.
@@ -31,7 +31,9 @@ def result(request):
     review = [ps.stem(word) for word in review if word not in stopwords.words("english")]
     review = " ".join(review)
     new_corpus.append(review)
+    print("*" * 40, new_corpus, "*" * 40)
     article_vectorized = tfidf_vectorizer.transform(new_corpus)
+    print("*"*40,article_vectorized,"*"*40)
     article_pred = multinomial_nb_classifier.predict(article_vectorized)
 
     if article_pred == [0]:
