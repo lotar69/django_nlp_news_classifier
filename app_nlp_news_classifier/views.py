@@ -26,10 +26,11 @@ def result(request):
     ps = PorterStemmer()
     new_corpus = []
     review = re.sub("[^a-zA-Z]", " ", article)
-    print(review)
+    print("*" * 40, review, "*" * 40)
     review = review.lower()
     review = review.split()
     review = [ps.stem(word) for word in review if word not in stopwords.words("english")]
+    print("*" * 40, review, "*" * 40)
     review = " ".join(review)
     new_corpus.append(review)
     print("*" * 40, new_corpus, "*" * 40)
